@@ -56,7 +56,6 @@ public class Player : MonoBehaviour {
 
     private Action PrepareFireBullet() {
         DateTime lastBulletFired = DateTime.Now;
-        float bulletYDisplacement = GetComponent<SpriteRenderer>().size.y / 2;
 
         Action HandleFireBullet = () => {
             Boolean canFire = lastBulletFired.AddMinutes(1 / bulletFireRatePerMinute) <= DateTime.Now;
