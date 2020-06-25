@@ -1,26 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    [SerializeField]
-    private float playerSpeed = 100.0f;
+    [SerializeField] private GameObject bullet = null;
+    [SerializeField] private float playerSpeed = 100.0f;
+    [SerializeField] private float paddingPercent = 0.05f;
+    [SerializeField] private float bulletFireRatePerMinute = 60f;
 
-    [SerializeField]
-    private float paddingPercent = 0.05f;
-
-    private Camera gameCamera;
+    private DateTime lastBulletFired = DateTime.Now;
     private Vector3 minPosition;
     private Vector3 maxPosition;
 
     void Start() {
-        gameCamera = Camera.main;
+        Camera gameCamera = Camera.main;
         minPosition = gameCamera.ViewportToWorldPoint(new Vector3(paddingPercent, paddingPercent, 0));
         maxPosition = gameCamera.ViewportToWorldPoint(new Vector3(1 - paddingPercent, 1 - paddingPercent, 0));
     }
 
     void Update() {
         HandlePlayerMovement();
+        HandleFireBullet();
     }
 
     private void HandlePlayerMovement() {
@@ -45,5 +46,13 @@ public class Player : MonoBehaviour {
 
     private void Move(Vector2 position) {
         transform.position = position;
+    }
+
+    private void HandleFireBullet() {
+        Boolean canFire = lastBulletFired.AddMinutes(1 / bulletFireRatePerMinute) <= DateTime.Now;
+        if (canFire && Input.GetButton("Fire1")) {
+            Instantiate(bullet, Vector2.zero, Quaternion.identity);
+            lastBulletFired = DateTime.Now;
+        }
     }
 }
