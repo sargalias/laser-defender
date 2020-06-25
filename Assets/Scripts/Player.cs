@@ -9,14 +9,17 @@ public class Player : MonoBehaviour {
     [SerializeField] private float paddingPercent = 0.05f;
     [SerializeField] private float bulletFireRatePerMinute = 60f;
 
-    private DateTime lastBulletFired = DateTime.Now;
     private Vector3 minPosition;
     private Vector3 maxPosition;
+
+    internal Action HandleFireBullet;
 
     void Start() {
         Camera gameCamera = Camera.main;
         minPosition = gameCamera.ViewportToWorldPoint(new Vector3(paddingPercent, paddingPercent, 0));
         maxPosition = gameCamera.ViewportToWorldPoint(new Vector3(1 - paddingPercent, 1 - paddingPercent, 0));
+
+        HandleFireBullet = PrepareFireBullet();
     }
 
     void Update() {
@@ -48,11 +51,17 @@ public class Player : MonoBehaviour {
         transform.position = position;
     }
 
-    private void HandleFireBullet() {
-        Boolean canFire = lastBulletFired.AddMinutes(1 / bulletFireRatePerMinute) <= DateTime.Now;
-        if (canFire && Input.GetButton("Fire1")) {
-            Instantiate(bullet, Vector2.zero, Quaternion.identity);
-            lastBulletFired = DateTime.Now;
-        }
+    private Action PrepareFireBullet() {
+        DateTime lastBulletFired = DateTime.Now;
+
+        Action HandleFireBullet = () => {
+            Boolean canFire = lastBulletFired.AddMinutes(1 / bulletFireRatePerMinute) <= DateTime.Now;
+            if (canFire && Input.GetButton("Fire1")) {
+                Instantiate(bullet, Vector2.zero, Quaternion.identity);
+                lastBulletFired = DateTime.Now;
+            }
+        };
+
+        return HandleFireBullet;
     }
 }
