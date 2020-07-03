@@ -2,26 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Laser : MonoBehaviour {
     [SerializeField]
     float speed = 100.0f;
 
-    float maxY;
-
     void Start() {
-        Camera camera = Camera.main;
-        maxY = camera.ViewportToWorldPoint(Vector3.one).y;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector2.up * speed;
     }
 
-    void Update() {
-        Move();
-    }
-
-    private void Move() {
-        Vector2 move = Vector2.up * Time.deltaTime * speed;
-        transform.Translate(move);
-        if (transform.position.y > maxY) {
-            Destroy(gameObject);
-        }
-    }
 }
