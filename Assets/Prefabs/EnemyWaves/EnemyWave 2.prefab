@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2898602863761314957
+--- !u!1001 &1128977162743429408
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -70,18 +70,13 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6368583757258214345, guid: f42a13f1f05518943861f825f1cea8d2,
         type: 3}
-      propertyPath: delay
-      value: 0.4
+      propertyPath: delayBetweenSpawns
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6368583757258214345, guid: f42a13f1f05518943861f825f1cea8d2,
         type: 3}
       propertyPath: numEnemies
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6368583757258214345, guid: f42a13f1f05518943861f825f1cea8d2,
-        type: 3}
-      propertyPath: delayBetweenSpawns
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6368583757258214345, guid: f42a13f1f05518943861f825f1cea8d2,
         type: 3}
@@ -92,12 +87,12 @@ PrefabInstance:
         type: 3}
       propertyPath: path
       value: 
-      objectReference: {fileID: 7473564533885442049, guid: c512aa7162238c844a05321ca8325ad9,
+      objectReference: {fileID: 2925937239843072145, guid: e9c797a07de5e8846b199e1a7e11fcc0,
         type: 3}
     - target: {fileID: 6368583757258214347, guid: f42a13f1f05518943861f825f1cea8d2,
         type: 3}
       propertyPath: m_Name
-      value: EnemyWave 1
+      value: EnemyWave 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f42a13f1f05518943861f825f1cea8d2, type: 3}

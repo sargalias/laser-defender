@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6368583757258214344}
   - component: {fileID: 6368583757258214345}
   m_Layer: 0
-  m_Name: EnemyWave (0)
+  m_Name: EnemyWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  delay: 0
+  delayBetweenSpawns: 0
   numEnemies: 0
+  speed: 0
+  path: {fileID: 0}

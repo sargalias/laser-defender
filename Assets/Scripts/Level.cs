@@ -2,16 +2,19 @@
 using UnityEngine;
 
 public class Level : MonoBehaviour {
-    [SerializeField] GameObject enemy = null;
+    [SerializeField] private GameObject[] waves = null;
+    [SerializeField] private float secondsBetweenSpawns = 0;
+    private int currentWaveIndex = 0;
 
     private void Start() {
-        StartCoroutine(SpawnWave());
+        StartCoroutine(SpawnWaves());
     }
 
-    IEnumerator SpawnWave() {
+    IEnumerator SpawnWaves() {
         while (true) {
-            Instantiate(enemy);
-            yield return new WaitForSeconds(1);
+            Instantiate(waves[currentWaveIndex]);
+            currentWaveIndex = (currentWaveIndex + 1) % waves.Length;
+            yield return new WaitForSeconds(secondsBetweenSpawns);
         }
     }
 }
