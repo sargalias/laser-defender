@@ -83,6 +83,17 @@ PrefabInstance:
       propertyPath: delayBetweenSpawns
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6368583757258214345, guid: f42a13f1f05518943861f825f1cea8d2,
+        type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368583757258214345, guid: f42a13f1f05518943861f825f1cea8d2,
+        type: 3}
+      propertyPath: path
+      value: 
+      objectReference: {fileID: 7473564533885442049, guid: c512aa7162238c844a05321ca8325ad9,
+        type: 3}
     - target: {fileID: 6368583757258214347, guid: f42a13f1f05518943861f825f1cea8d2,
         type: 3}
       propertyPath: m_Name

@@ -6,16 +6,25 @@ public class EnemyWave : MonoBehaviour {
     [SerializeField] GameObject enemy = null;
     [SerializeField] float delayBetweenSpawns = 0;
     [SerializeField] int numEnemies = 0;
+    [SerializeField] float speed = 0;
+    [SerializeField] Transform path = null;
+
+    private void Start() {
+        StartCoroutine(SpawnWave());
+    }
 
     private IEnumerator SpawnWave() {
         for (int i = 0; i < numEnemies; i++) {
-            Instantiate(enemy);
+            SpawnEnemy(enemy);
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
         Destroy(gameObject);
     }
 
-    private void Start() {
-        StartCoroutine(SpawnWave());
+    private void SpawnEnemy(GameObject enemy) {
+        GameObject enemyObject = Instantiate(enemy);
+        EnemyMovement enemyMovement = enemyObject.GetComponent<EnemyMovement>();
+        enemyMovement.speed = speed;
+        enemyMovement.path = path;
     }
 }
