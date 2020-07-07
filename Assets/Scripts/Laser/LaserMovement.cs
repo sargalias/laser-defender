@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Laser : MonoBehaviour {
+public class LaserMovement : MonoBehaviour {
     [SerializeField]
     float speed = 100.0f;
 
