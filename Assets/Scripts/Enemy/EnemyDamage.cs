@@ -7,14 +7,16 @@ public class EnemyDamage : MonoBehaviour {
     [SerializeField] private int health = 100;
 
     private void OnCollisionEnter2D(Collision2D other) {
-        LaserDamage laserDamage = other.gameObject.GetComponent<LaserDamage>();
-        int damageTaken = laserDamage.GetDamage();
-        laserDamage.Hit();
+        if (other.gameObject.tag == "Projectile") {
+            LaserDamage laserDamage = other.gameObject.GetComponent<LaserDamage>();
+            int damageTaken = laserDamage.GetDamage();
+            laserDamage.Hit();
 
-        health -= damageTaken;
+            health -= damageTaken;
 
-        if (health <= 0) {
-            Destroy(gameObject);
+            if (health <= 0) {
+                Destroy(gameObject);
+            }
         }
     }
 }

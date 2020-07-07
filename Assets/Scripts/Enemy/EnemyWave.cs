@@ -23,6 +23,7 @@ public class EnemyWave : MonoBehaviour {
 
     private void SpawnEnemy(GameObject enemy) {
         GameObject enemyObject = Instantiate(enemy);
+        enemyObject.transform.position = new Vector2(500, 500);
         EnemyMovement enemyMovement = enemyObject.GetComponent<EnemyMovement>();
         enemyMovement.speed = speed;
         enemyMovement.path = path;
