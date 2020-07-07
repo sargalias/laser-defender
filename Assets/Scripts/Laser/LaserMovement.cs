@@ -11,5 +11,4 @@ public class LaserMovement : MonoBehaviour {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.up * speed;
     }
-
 }
