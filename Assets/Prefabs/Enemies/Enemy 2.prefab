@@ -1,34 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!58 &5941077620070499136
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984984158442090082}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4.2
---- !u!114 &-1772490814632270202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984984158442090082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9797a1e6fa76bd45a6f70ac01302ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 1d859d815f012154b8afbab9578b5fbe, type: 2}
 --- !u!1001 &5875169777760043880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36,6 +7,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4961693865168962476, guid: db882a8ea6276444c8a2933d365da534,
+        type: 3}
+      propertyPath: minFireDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4961693865168962476, guid: db882a8ea6276444c8a2933d365da534,
+        type: 3}
+      propertyPath: maxFireDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4961693865168962476, guid: db882a8ea6276444c8a2933d365da534,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 372494511341188549, guid: ed8457aaa6cf202428edaf7bda2d1f53,
+        type: 3}
+    - target: {fileID: -2977505582694667107, guid: db882a8ea6276444c8a2933d365da534,
+        type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d859d815f012154b8afbab9578b5fbe,
+        type: 2}
+    - target: {fileID: 825006757381176419, guid: db882a8ea6276444c8a2933d365da534,
+        type: 3}
+      propertyPath: m_Radius
+      value: 4.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6639315303202057480, guid: db882a8ea6276444c8a2933d365da534,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -119,9 +117,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db882a8ea6276444c8a2933d365da534, type: 3}
---- !u!1 &984984158442090082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6639315303202057482, guid: db882a8ea6276444c8a2933d365da534,
-    type: 3}
-  m_PrefabInstance: {fileID: 5875169777760043880}
-  m_PrefabAsset: {fileID: 0}
