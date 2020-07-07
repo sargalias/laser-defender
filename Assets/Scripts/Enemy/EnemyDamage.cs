@@ -11,11 +11,7 @@ public class EnemyDamage : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "PlayerProjectile") {
-            LaserDamage laserDamage = other.gameObject.GetComponent<LaserDamage>();
-            int damageTaken = laserDamage.GetDamage();
-            laserDamage.Hit();
-
-            health -= damageTaken;
+            health = DamageDealer.Hit(other, health);
 
             if (health <= 0) {
                 Destroy(gameObject);

@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour {
     Vector3 minPosition = Vector3.zero;
     Vector3 maxPosition = Vector3.zero;
 
-
-
     private void Start() {
         paddingPercent = playerData.paddingPercent;
         speed = playerData.playerSpeed;
